@@ -11,13 +11,16 @@ $(document).ready(function () {
     version: '1.2',
     channel: 'stable',
     os: default_os,
-    arch: 'amd64'
+    arch: 'amd64',
+    backend: 'docker',
+    setting: 'shell'
   }
 
   const windows_default_method = "manually";
   const unix_default_method = "installer";
 
   function doInstallSelect(group, param) {
+    console.log(group, param)
     $(`[data-install-tab-group="${group}"]`).removeClass('active');
     $(`[data-install-tab="${param}"]`).addClass('active');
 
