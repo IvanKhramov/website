@@ -63,7 +63,7 @@ backend:
           data-install-tab-group="channel" data-install-tab="alpha">Alpha</a>
       </div>
     </div><!-- /selector -->
-  </div>
+  </div><!-- /selector-row -->
   <div class="installation-selector-row">
     <div class="installation-selector">
       <div class="installation-selector__title">Окружение запуска</div>
@@ -131,9 +131,9 @@ backend:
               <div class="installation-instruction__tab-content" data-install-content-group="arch" data-install-content="{{ arch }}">
                 <div markdown="1">
                 {% include installation/trdl_linux.md version=version channel=channel arch=arch %}
-                {%- if version != 1.1 %}
+                {% if version != 1.1 %}
                 {% include installation/setup_buildah.md version=version %}
-                {%- endif %}
+                {% endif %}
                 </div>
               </div>
               {% endfor %}
@@ -183,9 +183,9 @@ backend:
                 <div class="installation-instruction__tab-content" data-install-content-group="arch" data-install-content="{{ arch }}">
                   <div markdown="1">
                   {% include installation/installer_linux_macos.md version=version channel=channel %}
-                  {%- if version != 1.1 %}
+                  {% if version != 1.1 %}
                   {% include installation/setup_buildah.md version=version %}
-                  {%- endif %}
+                  {% endif %}
                   </div>
                 </div>
                 {% endfor %}
